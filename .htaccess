@@ -12,9 +12,10 @@ RewriteRule ^feed/(rss|atom)?$ feed.php?type=$1
 
 ErrorDocument 404 error.php?error=404
 
+
+
 #lighttpd rewrite urls
 #if you want to use them, you must copy them without any # in the /etc/lighttpd/lighttpd.conf where your vhost is
-
 
 #url.rewrite-once = (
 #                     "^//(.*)\.(.+)$" => "$0",
