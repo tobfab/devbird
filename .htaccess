@@ -11,3 +11,26 @@ RewriteRule ^tag/(.*?)(/page/(\d+))*$ index.php?tag=$1&p=$3
 RewriteRule ^feed/(rss|atom)?$ feed.php?type=$1
 
 ErrorDocument 404 error.php?error=404
+
+#lighttpd rewrite urls
+#if you want to use them, you must copy them without any # in the /etc/lighttpd/lighttpd.conf where your vhost is
+
+
+#url.rewrite-once = (
+#                     "^//(.*)\.(.+)$" => "$0",
+#                     "^/page/(.*)$" => "/index.php?p=$1",
+#                     "^/site/(.*)$" => "/index.php?site=$1",
+#                     "^(.*)/trackback$" => "/trackback.php?id=$1",
+#                     "^/([0-9]+)/(.*)$" => "/index.php?id=$1",
+#                     "^/index$" => "index.php",
+#                     "^/tag/(.*)$" => "/index.php?tag=$1&p=$1",
+#                     "^/feed/rss" => "/feed.php?type=rss",
+#                     "^/feed/atom" => "/feed.php?type=atom",
+#                     "^/admin/(.*).db$" => "/admin/index.php?site=$1",
+#                     "^/admin/(.*).db/([0-9]+)/$" => "/admin/index.php?site=$1&p=$1",
+#                     "^/admin/(.*).db/([0-9]+)/(.*)$" => "/admin/index.php?site=$1&id=$2&action=$3",
+#                     "^/admin/(.*).db/(.*)$" => "/admin/index.php?site=$1&action=$3"
+#
+#                         )
+
+
